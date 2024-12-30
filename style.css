@@ -60,22 +60,30 @@ body {
 
 .table {
     display: flex;
-    align-items: center;
-    margin-top: 20px;
+    flex-direction: column; /* Hiển thị từng dòng */
+    overflow-x: auto; /* Kích hoạt cuộn ngang khi cần */
+    white-space: nowrap; /* Không xuống dòng */
     border-top: 2px solid #f2b8b8;
     padding-top: 10px;
-}
-.row{
-    display: flex;
-    justify-content: center;
-    gap:60px;
-}
-.cell {
-    flex: 1;
-    border: 1px solid #f2b8b8;
-    padding: 10px;
-    margin: 0 5px;
-    border-radius: 5px;
     background-color: #fff;
+}
+
+.row {
+    display: flex; /* Hiển thị các ô trong hàng ngang */
+    justify-content: flex-start; /* Canh đều theo chiều ngang */
+    border-bottom: 1px solid #f2b8b8;
+}
+
+.cell {
+    flex: none; /* Không tự động co giãn */
+    min-width: 250px; /* Chiều rộng tối thiểu cho ô */
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #f2b8b8;
     font-weight: bold;
+    background-color: #fff;
+    
+}
+.row .cell:first-child {
+    flex: 0 0 50px; /* Cột STT sẽ có chiều rộng cố định là 50px */
 }
