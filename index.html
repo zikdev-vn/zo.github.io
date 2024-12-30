@@ -3,16 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Airdrop đã tham gia</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="Container-home">
-        <div class="Container-home-left">
-            
+    <div class="container">
+        <header class="header">
+            <h1>Airdrop đã tham gia</h1>
+        </header>
+        <div class="sub-header">
+            <p>Nhập vào đây kèo mà bạn muốn lưu</p>
         </div>
-        <div class="Container-home-right">
-
+        <div class="input-section">
+            <div class="input-box">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Nhập vào đây">
+            </div>
+            <div class="input-box">
+                <label for="address">Address</label>
+                <input type="text" id="address" placeholder="Nhập vào đây">
+            </div>
+            <div class="input-box">
+                <label for="balance">Balance</label>
+                <input type="text" id="balance" placeholder="Nhập vào đây">
+            </div>
+            <div class="input-box">
+                <label for="backer">Backker</label>
+                <input type="text" id="backer" placeholder="Nhập vào đây">
+            </div>
         </div>
-    </section>
+        <button id="save-btn">Lưu dữ liệu</button>
+        <div class="table" id="history-table">
+            <div class="row">
+                <div class="cell">STT</div>
+                <div class="cell">Name</div>
+                <div class="cell">Address</div>
+                <div class="cell">Balance</div>
+                <div class="cell">Backker</div>
+                <div class="cell">Time</div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
