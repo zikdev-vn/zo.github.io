@@ -59,31 +59,59 @@ body {
 }
 
 .table {
-    display: flex;
-    flex-direction: column; /* Hiển thị từng dòng */
-    overflow-x: auto; /* Kích hoạt cuộn ngang khi cần */
-    white-space: nowrap; /* Không xuống dòng */
-    border-top: 2px solid #f2b8b8;
-    padding-top: 10px;
-    background-color: #fff;
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
 }
 
 .row {
-    display: flex; /* Hiển thị các ô trong hàng ngang */
-    justify-content: flex-start; /* Canh đều theo chiều ngang */
-    border-bottom: 1px solid #f2b8b8;
+    display: table-row;
 }
 
 .cell {
-    flex: none; /* Không tự động co giãn */
-    min-width: 250px; /* Chiều rộng tối thiểu cho ô */
-    padding: 10px;
+    display: table-cell;
+    border: 1px solid #ddd;
+    padding: 8px;
     text-align: center;
-    border: 1px solid #f2b8b8;
-    font-weight: bold;
-    background-color: #fff;
-    
+    word-wrap: break-word;
+    /* Cho phép xuống dòng */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Thêm dấu "..." nếu quá dài */
+    white-space: nowrap;
+    /* Không xuống dòng trừ khi cần */
 }
-.row .cell:first-child {
-    flex: 0 0 50px; /* Cột STT sẽ có chiều rộng cố định là 50px */
+
+.row:first-child {
+    font-weight: bold;
+    background-color: #f4f4f4;
+}
+
+#delete-btn {
+    display: inline-block;
+    margin: 8px 0;
+    padding: 6px 12px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#delete-btn:hover {
+    background-color: #e60000;
+}
+
+@media screen and (max-width: 768px) {
+    .cell {
+        font-size: 12px;
+        /* Thu nhỏ font chữ trên màn hình nhỏ */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cell {
+        white-space: normal;
+        /* Cho phép xuống dòng trên màn hình rất nhỏ */
+    }
 }
